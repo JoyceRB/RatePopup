@@ -42,6 +42,7 @@ let ratePopup = RatePopup()
 ```
 
 <h4>Set delegate:</h4>
+
 * Objective-C and Swift:
 ```Objective-C
 ratePopup.ratePopupDelegate = self
@@ -62,6 +63,7 @@ self.present(ratePopup, animated: false, completion: nil)
 ### Elements configurations:
 
 <h4>Set message:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setMessage:@"Message you want"];
@@ -73,6 +75,7 @@ ratePopup.setMessage("How do you value our service?")
 ```
 
 <h4>Set message color:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setMessageColorText:[UIColor blueColor]];
@@ -84,6 +87,7 @@ ratePopup.setMessageColorText(UIColor.green)
 ```
 
 <h4>Set more details textfield placeholder:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setMoreDetailsPlaceHolder:@"Add more details"];
@@ -95,6 +99,7 @@ ratePopup.setMoreDetailsPlaceHolder("Add more details")
 ```
 
 <h4>If you want to change title of buttons:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setOkButtonTitle:@"Ok title"];
@@ -108,6 +113,7 @@ ratePopup.setCancelButtonTitle("Cancel Title")
 ```
 
 <h4>If you want to change color of text of buttons:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setOkButtonTitleColor:[UIColor greenColor]];
@@ -121,6 +127,7 @@ ratePopup.setCancelButtonTitleColor(UIColor.green)
 ```
 
 <h4>If you want to change color of stars:</h4>
+
 * Objective-C:
 ```Objective-C
 [ratePopup setStarsColor:[UIColor redColor]];
@@ -150,6 +157,7 @@ func onClickRatePopupOK(score: Int, comments: String) {
 ```
 
 <h4>Function to call when click on CANCEL button. You need to set it on your ViewController:</h4>
+
 * Objective-C:
 ```Objective-C
 (void)onClickRateAppCancel {
