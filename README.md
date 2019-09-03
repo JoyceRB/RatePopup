@@ -10,6 +10,7 @@ Component to rate/give feedbak. It is made with Swift language. Just need to dow
 <h3>First steps:</h3>
 
 <h4>Import RatePopup on your ViewController:</h4>
+
 First you need to create a Bridge header file and then import it into your ViewController. Example:
 
 * Objective-C:
@@ -21,7 +22,7 @@ import "BridgeHeader-Swift.h"
 
 * Objective-C:
 ```Objective-C
-@interface MyController : ViewController <RateAppDelegate>
+@interface MyController : ViewController <RatePopupDelegate>
 ```
 
 * Swift:
@@ -139,6 +140,7 @@ ratePopup.setStarsColor(UIColor.green)
 ```
 
 <h4>Function to call when click on OK Button:</h4>
+
 You need to set it on your ViewController:
 
 * Objective-C:
