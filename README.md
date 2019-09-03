@@ -9,76 +9,154 @@ Component to rate/give feedbak. It is made with Swift language. Just need to dow
 
 <h3>First steps:</h3>
 
-* Import RateApp on my ViewController:
+* Import RatePopup on your ViewController:
+First you need to create a Bridge header file and then import it into your ViewController. Example:
 ```Objective-C
-import "RateApp.h"
+import "BridgeHeader-Swift.h"
 ```
 
-* Reference RateAppDelegate on my ViewController:
+* Reference RatePopupDelegate on ViewController:
+
+Objective-C:
 ```Objective-C
 @interface MyController : ViewController <RateAppDelegate>
 ```
 
-* Instantiate RateApp:
+Swift:
+```Swift
+class MyViewController: UIViewController, RatePopupDelegate {
+```
+
+* Instantiate RatePopup:
+
+Objective-C:
 ```Objective-C
-RateApp *rateApp = [[RateApp alloc] init];
+RatePopup *ratePopup = [[RatePopup alloc] init];
+```
+
+Swift:
+```Swift
+let ratePopup = RatePopup()
 ```
 
 * Set delegate:
 ```Objective-C
-rateApp.rateAppDelegate = self;
+ratePopup.ratePopupDelegate = self
 ```
 
 * Present RateApp on my ViewController:
+
+Objective-C:
 ```Objective-C
-[self presentViewController:rateApp animated:NO completion:nil];
+[self presentViewController:ratePopup animated:NO completion:nil];
+```
+
+Swift:
+```Swift
+self.present(ratePopup, animated: false, completion: nil)
 ```
 
 ### Elements configurations:
 
 * Set message:
+Objective-C:
 ```Objective-C
-rateApp.message = @"Message you want";
+[ratePopup setMessage:@"Message you want"];
+```
+
+Swift:
+```Swift
+ratePopup.setMessage("How do you value our service?")
 ```
 
 * Set message color:
+Objective-C:
 ```Objective-C
-rateApp.messageColorText = [UIColor blueColor];
+[ratePopup setMessageColorText:[UIColor blueColor]];
+```
+
+Swift:
+```Swift
+ratePopup.setMessageColorText(UIColor.green)
 ```
 
 * Set more details textfield placeholder:
+Objective-C:
 ```Objective-C
-rateApp.moreDetailsPlaceHolder = @"Add more details";
+[ratePopup setMoreDetailsPlaceHolder:@"Add more details"];
+```
+
+Swift:
+```Swift
+ratePopup.setMoreDetailsPlaceHolder("Add more details")
 ```
 
 * If you want to change title of buttons:
+Objective-C:
 ```Objective-C
-rateApp.okButtonTitle = @"TITLE";
-rateApp.cancelButtonTitle = @"TITLE";
+[ratePopup setOkButtonTitle:@"Ok title"];
+[ratePopup setCancelButtonTitle:@"Cancel title"];
+```
+
+Swift:
+```Swift
+ratePopup.setOkButtonTitle("Ok Title")
+ratePopup.setCancelButtonTitle("Cancel Title")
 ```
 
 * If you want to change color of text of buttons:
+Objective-C:
 ```Objective-C
-rateApp.okButtonColor = [UIColor greenColor];
-rateApp.cancelButtonColor = [UIColor greenColor];
+[ratePopup setOkButtonTitleColor:[UIColor greenColor]];
+[ratePopup setCancelButtonTitleColor:[UIColor greenColor]];
+```
+
+Swift:
+```Swift
+ratePopup.setOkButtonTitleColor(UIColor.green)
+ratePopup.setCancelButtonTitleColor(UIColor.green)
 ```
 
 * If you want to change color of stars:
+Objective-C:
 ```Objective-C
-rateApp.starsColor = [UIColor redColor];
+[ratePopup setStarsColor:[UIColor redColor]];
+```
+
+Swift:
+```Swift
+ratePopup.setStarsColor(UIColor.green)
 ```
 
 * Function to call when click on OK Button. You need to set it on your ViewController:
+Objective-C:
 ```Objective-C
-(void)onClickRateAppOK:(NSInteger) score {
-    //Do whatever you want when you click on OK button. Score is how many stars user set as score
+- (void)onClickRatePopupOKWithScore:(NSInteger)score comments:(NSString *)comments {
+	//Do whatever you want when you click on OK button. Score is how many stars user sets as score and comment is what user	sets on "More Details" TextField:
     NSLog(@"Score: %ld", score);
 }
 ```
 
+Swift:
+```Swift
+func onClickRatePopupOK(score: Int, comments: String) {
+ 	//Do whatever you want when you click on OK button. Score is how many stars user sets as score and comment is what user	sets on "More Details" TextField:
+    }
+```
+
 * Function to call when click on CANCEL button. You need to set it on your ViewController:
+Objective-C:
 ```Objective-C
 (void)onClickRateAppCancel {
     //Do whatever you want when you click on Cancel button.
 }
+```
+
+Swift:
+```Swift
+func onClickRatePopupCancel() {
+	//Do whatever you want when you click on Cancel button.
+}
+```
+
 
