@@ -45,7 +45,7 @@ let ratePopup = RatePopup()
 <h4>Set delegate:</h4>
 
 * Objective-C and Swift:
-```Objective-C
+```Swift
 ratePopup.ratePopupDelegate = self
 ```
 
@@ -173,5 +173,3 @@ func onClickRatePopupCancel() {
 	//Do whatever you want when you click on Cancel button.
 }
 ```
-
-
